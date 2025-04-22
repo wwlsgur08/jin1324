@@ -1,0 +1,280 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #000000;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+h1 {
+    margin-bottom: 5px;
+    font-size: 24px;
+}
+
+.subtitle {
+    margin-bottom: 15px;
+}
+
+.subtitle h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.subtitle h3 {
+    font-size: 16px;
+}
+
+.stats {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+main {
+    display: flex;
+    min-height: calc(100vh - 150px);
+}
+
+/* 사이드바 스타일 */
+.sidebar {
+    width: 180px;
+    padding-right: 20px;
+}
+
+.cost-level-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.table-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.table-cell {
+    padding: 3px;
+    font-size: 14px;
+}
+
+.remaining-stardust {
+    font-size: 16px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* 콘텐츠 영역 스타일 */
+.content {
+    flex-grow: 1;
+}
+
+.categories-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.category {
+    margin-bottom: 20px;
+}
+
+.category h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.charm-list {
+    list-style-type: none;
+}
+
+.charm-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    padding: 3px;
+}
+
+.charm-number {
+    margin-right: 5px;
+    min-width: 20px;
+    font-size: 14px;
+}
+
+.charm-name {
+    min-width: 120px;
+    font-size: 14px;
+}
+
+.level-select {
+    display: flex;
+    align-items: center;
+}
+
+.level-select.compact {
+    gap: 2px;
+}
+
+.level-btn {
+    width: 22px;
+    height: 22px;
+    background-color: #333;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.level-btn:hover {
+    background-color: #555;
+}
+
+.level-btn.active {
+    background-color: #fff;
+    color: #000;
+}
+
+.level-btn.disabled {
+    background-color: #222;
+    color: #555;
+    cursor: not-allowed;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.actions button {
+    padding: 8px 15px;
+    font-size: 14px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.actions button:hover {
+    background-color: #555;
+}
+
+/* 모달 스타일 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: #111;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 800px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: white;
+}
+
+#top-charms {
+    margin: 15px 0;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+#charm-results {
+    margin: 15px 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.result-category {
+    margin-bottom: 15px;
+}
+
+.result-category h3 {
+    margin-bottom: 5px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+}
+
+.charm-result-item {
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#final-result {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+    
+    .categories-container {
+        grid-template-columns: 1fr;
+    }
+}
